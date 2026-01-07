@@ -35,7 +35,13 @@ int main(int argc, char **argv) {
   glViewport(0, 0, 800, 600); // 不是glfw窗口坐标系坐标,会自动对齐
   glfwSetFramebufferSizeCallback(window, framebufferResizeCallback);
 
-  std::array<float, 9> triangle_vtx{-0.5f, -0.5f, 0.0f, 0.}
+  std::array<float, 9> triangle_vtx{-0.5f, -0.5f, 0.0f, 0.5f, -0.5f,
+                                    0.0f,  0.0f,  0.5f, 0.0f};
+  GLuint vbo;            // vbo其实是个id
+  glGenBuffers(1, &vbo); // 第一个参数是申请id的对象,第二个参数是存放id的地方
+  glBindBuffer(GL_ARRAY_BUFFER, vbo);
+  glBufferData(GL_ARRAY_BUFFER, sizeof(triangle_vtx), triangle_vtx.data(),
+               GL_STATIC_DRAW); // 数据首地址 // 将数据放入vbo中
 
   while (!glfwWindowShouldClose(window)) {
     processKeyPress(window);
@@ -47,5 +53,4 @@ int main(int argc, char **argv) {
   glfwTerminate();
 
   return 0;
-  e
 }
