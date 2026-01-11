@@ -78,6 +78,7 @@ CMakeFiles/opengllearning.dir/src/main.cpp.o: /home/zgh/CPPLearning/openglLearni
   /usr/include/c++/14/bits/shared_ptr.h \
   /usr/include/c++/14/bits/shared_ptr_atomic.h \
   /usr/include/c++/14/bits/shared_ptr_base.h \
+  /usr/include/c++/14/bits/specfun.h \
   /usr/include/c++/14/bits/std_abs.h \
   /usr/include/c++/14/bits/std_mutex.h \
   /usr/include/c++/14/bits/stl_algo.h \
@@ -112,6 +113,7 @@ CMakeFiles/opengllearning.dir/src/main.cpp.o: /home/zgh/CPPLearning/openglLearni
   /usr/include/c++/14/charconv \
   /usr/include/c++/14/climits \
   /usr/include/c++/14/clocale \
+  /usr/include/c++/14/cmath \
   /usr/include/c++/14/compare \
   /usr/include/c++/14/concepts \
   /usr/include/c++/14/cstddef \
@@ -153,6 +155,18 @@ CMakeFiles/opengllearning.dir/src/main.cpp.o: /home/zgh/CPPLearning/openglLearni
   /usr/include/c++/14/string \
   /usr/include/c++/14/string_view \
   /usr/include/c++/14/system_error \
+  /usr/include/c++/14/tr1/bessel_function.tcc \
+  /usr/include/c++/14/tr1/beta_function.tcc \
+  /usr/include/c++/14/tr1/ell_integral.tcc \
+  /usr/include/c++/14/tr1/exp_integral.tcc \
+  /usr/include/c++/14/tr1/gamma.tcc \
+  /usr/include/c++/14/tr1/hypergeometric.tcc \
+  /usr/include/c++/14/tr1/legendre_function.tcc \
+  /usr/include/c++/14/tr1/modified_bessel_func.tcc \
+  /usr/include/c++/14/tr1/poly_hermite.tcc \
+  /usr/include/c++/14/tr1/poly_laguerre.tcc \
+  /usr/include/c++/14/tr1/riemann_zeta.tcc \
+  /usr/include/c++/14/tr1/special_function_util.h \
   /usr/include/c++/14/tuple \
   /usr/include/c++/14/type_traits \
   /usr/include/c++/14/typeinfo \
@@ -173,6 +187,7 @@ CMakeFiles/opengllearning.dir/src/main.cpp.o: /home/zgh/CPPLearning/openglLearni
   /usr/include/linux/stddef.h \
   /usr/include/linux/types.h \
   /usr/include/locale.h \
+  /usr/include/math.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
   /usr/include/stdc-predef.h \
@@ -201,12 +216,22 @@ CMakeFiles/opengllearning.dir/src/main.cpp.o: /home/zgh/CPPLearning/openglLearni
   /usr/include/x86_64-linux-gnu/bits/errno.h \
   /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
+  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
   /usr/include/x86_64-linux-gnu/bits/local_lim.h \
   /usr/include/x86_64-linux-gnu/bits/locale.h \
   /usr/include/x86_64-linux-gnu/bits/long-double.h \
+  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-macros.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
   /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
   /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
   /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
@@ -355,8 +380,6 @@ CMakeFiles/opengllearning.dir/src/main.cpp.o:
 
 /usr/include/x86_64-linux-gnu/c++/14/bits/os_defines.h:
 
-/usr/include/x86_64-linux-gnu/c++/14/bits/messages_members.h:
-
 /usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
 /usr/include/x86_64-linux-gnu/c++/14/bits/gthr-default.h:
@@ -377,11 +400,51 @@ CMakeFiles/opengllearning.dir/src/main.cpp.o:
 
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 
+/usr/include/x86_64-linux-gnu/bits/uio_lim.h:
+
+/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
+
+/usr/include/x86_64-linux-gnu/bits/typesizes.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
+
+/usr/include/x86_64-linux-gnu/c++/14/bits/gthr.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/error_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
+
 /usr/include/c++/14/debug/assertions.h:
 
 /usr/include/c++/14/cstddef:
 
-/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
+/usr/include/c++/14/bits/locale_classes.h:
 
 /usr/lib/x86_64-linux-gnu/crti.o:
 
@@ -393,19 +456,19 @@ CMakeFiles/opengllearning.dir/src/main.cpp.o:
 
 /usr/include/c++/14/cerrno:
 
-/usr/include/c++/14/debug/debug.h:
-
 /usr/include/errno.h:
 
 /usr/include/c++/14/bits/version.h:
 
 /usr/include/c++/14/bits/uses_allocator_args.h:
 
+/usr/include/c++/14/bits/new_allocator.h:
+
+/usr/include/c++/14/bits/stl_bvector.h:
+
 /usr/include/c++/14/bits/stl_iterator_base_types.h:
 
 /usr/include/x86_64-linux-gnu/bits/local_lim.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
 
 /usr/include/c++/14/bits/stl_iterator_base_funcs.h:
 
@@ -413,15 +476,17 @@ CMakeFiles/opengllearning.dir/src/main.cpp.o:
 
 /usr/include/c++/14/ext/numeric_traits.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
-
 /usr/include/c++/14/bits/stl_iterator.h:
 
 /usr/include/c++/14/bits/stl_algobase.h:
 
 /usr/include/asm-generic/errno-base.h:
 
+/usr/include/c++/14/cmath:
+
 /usr/include/c++/14/bits/stl_algo.h:
+
+/usr/include/c++/14/tr1/beta_function.tcc:
 
 /usr/include/c++/14/bits/shared_ptr_base.h:
 
@@ -432,8 +497,6 @@ CMakeFiles/opengllearning.dir/src/main.cpp.o:
 /usr/include/x86_64-linux-gnu/bits/cpu-set.h:
 
 /usr/include/c++/14/bits/shared_ptr_atomic.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
 
 /usr/include/c++/14/bits/requires_hosted.h:
 
@@ -447,8 +510,6 @@ CMakeFiles/opengllearning.dir/src/main.cpp.o:
 
 /usr/include/c++/14/bits/refwrap.h:
 
-/usr/include/c++/14/bits/ranges_uninitialized.h:
-
 /usr/include/wchar.h:
 
 /usr/include/c++/14/bits/streambuf_iterator.h:
@@ -460,6 +521,10 @@ CMakeFiles/opengllearning.dir/src/main.cpp.o:
 /usr/include/c++/14/bits/stl_construct.h:
 
 /usr/include/c++/14/bits/predefined_ops.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
+
+/usr/include/asm-generic/errno.h:
 
 /usr/include/syscall.h:
 
@@ -479,17 +544,11 @@ CMakeFiles/opengllearning.dir/src/main.cpp.o:
 
 /usr/include/c++/14/bits/nested_exception.h:
 
-/usr/include/c++/14/ext/concurrence.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
-
 /usr/include/c++/14/bits/basic_ios.tcc:
 
 /usr/include/c++/14/bits/charconv.h:
 
 /usr/include/c++/14/cwchar:
-
-/usr/include/c++/14/stdexcept:
 
 /usr/include/c++/14/bits/stl_uninitialized.h:
 
@@ -504,8 +563,6 @@ CMakeFiles/opengllearning.dir/src/main.cpp.o:
 /usr/include/c++/14/bits/unique_ptr.h:
 
 /usr/include/c++/14/bits/allocator.h:
-
-/usr/include/c++/14/bits/allocated_ptr.h:
 
 /usr/include/c++/14/bits/stl_raw_storage_iter.h:
 
@@ -524,6 +581,8 @@ CMakeFiles/opengllearning.dir/src/main.cpp.o:
 /usr/include/c++/14/system_error:
 
 /usr/include/asm-generic/posix_types.h:
+
+/usr/include/c++/14/tr1/bessel_function.tcc:
 
 /usr/include/stdc-predef.h:
 
@@ -546,6 +605,8 @@ CMakeFiles/opengllearning.dir/src/main.cpp.o:
 /usr/include/c++/14/bits/locale_facets.h:
 
 /usr/include/c++/14/bits/basic_string.h:
+
+/usr/include/c++/14/tr1/riemann_zeta.tcc:
 
 /usr/include/x86_64-linux-gnu/bits/sched.h:
 
@@ -573,15 +634,11 @@ CMakeFiles/opengllearning.dir/src/main.cpp.o:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-least.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
-
 /usr/include/c++/14/backward/binders.h:
 
 /usr/include/linux/stddef.h:
 
 /usr/include/c++/14/bits/stl_tempbuf.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
 
 /usr/include/c++/14/bits/stringfwd.h:
 
@@ -593,13 +650,11 @@ CMakeFiles/opengllearning.dir/src/main.cpp.o:
 
 /usr/include/c++/14/bits/locale_facets_nonio.h:
 
+/usr/include/x86_64-linux-gnu/bits/fp-fast.h:
+
 /usr/include/c++/14/bits/locale_facets_nonio.tcc:
 
 /usr/include/c++/14/bits/ptr_traits.h:
-
-/home/zgh/CPPLearning/openglLearning/third_party/glfw/include/GLFW/glfw3.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
 /usr/include/alloca.h:
 
@@ -607,19 +662,21 @@ CMakeFiles/opengllearning.dir/src/main.cpp.o:
 
 /usr/include/unistd.h:
 
-/usr/include/c++/14/bits/uniform_int_dist.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
+
+/usr/include/c++/14/bits/uniform_int_dist.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
 
 /usr/include/c++/14/backward/auto_ptr.h:
 
-/usr/include/c++/14/bits/move.h:
-
 /usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
 
 /usr/include/c++/14/array:
+
+/usr/include/c++/14/bits/ranges_uninitialized.h:
+
+/usr/include/c++/14/bits/specfun.h:
 
 /usr/lib/x86_64-linux-gnu/crtn.o:
 
@@ -643,17 +700,17 @@ CMakeFiles/opengllearning.dir/src/main.cpp.o:
 
 /usr/include/c++/14/bits/unicode.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
-
 /usr/include/c++/14/bits/range_access.h:
 
 /home/zgh/CPPLearning/openglLearning/src/main.cpp:
 
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
+
 /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
 
 /usr/include/c++/14/bits/exception_defines.h:
+
+/usr/include/c++/14/tr1/legendre_function.tcc:
 
 /usr/include/x86_64-linux-gnu/bits/locale.h:
 
@@ -687,9 +744,9 @@ CMakeFiles/opengllearning.dir/src/main.cpp.o:
 
 /usr/include/c++/14/string_view:
 
-/usr/include/c++/14/bits/enable_special_members.h:
+/usr/include/c++/14/tr1/poly_laguerre.tcc:
 
-/usr/include/c++/14/ext/atomicity.h:
+/usr/include/c++/14/bits/enable_special_members.h:
 
 /usr/include/c++/14/limits:
 
@@ -713,6 +770,8 @@ CMakeFiles/opengllearning.dir/src/main.cpp.o:
 
 /usr/include/linux/posix_types.h:
 
+/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
+
 /usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
 
 /usr/include/c++/14/bits/ios_base.h:
@@ -722,12 +781,6 @@ CMakeFiles/opengllearning.dir/src/main.cpp.o:
 /usr/include/c++/14/bits/algorithmfwd.h:
 
 /usr/include/c++/14/bits/istream.tcc:
-
-/usr/include/c++/14/bits/locale_classes.h:
-
-/usr/include/c++/14/bits/stl_bvector.h:
-
-/usr/include/c++/14/bits/new_allocator.h:
 
 /usr/include/c++/14/bits/uses_allocator.h:
 
@@ -753,6 +806,10 @@ CMakeFiles/opengllearning.dir/src/main.cpp.o:
 
 /usr/include/c++/14/bits/memoryfwd.h:
 
+/usr/include/c++/14/ext/atomicity.h:
+
+/usr/include/c++/14/ext/concurrence.h:
+
 /usr/include/c++/14/ext/string_conversions.h:
 
 /usr/include/c++/14/ext/type_traits.h:
@@ -775,17 +832,55 @@ CMakeFiles/opengllearning.dir/src/main.cpp.o:
 
 /usr/include/c++/14/numbers:
 
-/usr/include/x86_64-linux-gnu/bits/types/error_t.h:
+/usr/lib/gcc/x86_64-linux-gnu/14/include/stdarg.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
+
+/usr/include/asm-generic/types.h:
+
+/usr/include/asm-generic/bitsperlong.h:
+
+/usr/include/c++/14/pstl/execution_defs.h:
+
+/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
 
 /usr/include/c++/14/span:
 
-/usr/include/c++/14/tuple:
+/usr/include/c++/14/bits/move.h:
 
-/usr/include/c++/14/type_traits:
+/usr/include/c++/14/tr1/ell_integral.tcc:
+
+/usr/include/x86_64-linux-gnu/c++/14/bits/messages_members.h:
+
+/usr/include/c++/14/tr1/exp_integral.tcc:
 
 /usr/lib/x86_64-linux-gnu/Scrt1.o:
 
 /usr/include/c++/14/typeinfo:
+
+/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
+
+/usr/include/c++/14/tr1/gamma.tcc:
+
+/usr/include/c++/14/debug/debug.h:
+
+/usr/include/c++/14/tr1/hypergeometric.tcc:
+
+/usr/include/c++/14/tr1/modified_bessel_func.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/iscanonical.h:
+
+/usr/include/c++/14/tr1/poly_hermite.tcc:
+
+/usr/include/c++/14/stdexcept:
+
+/usr/include/c++/14/tr1/special_function_util.h:
+
+/usr/include/x86_64-linux-gnu/bits/errno.h:
+
+/usr/include/c++/14/tuple:
+
+/usr/include/c++/14/type_traits:
 
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
@@ -793,7 +888,7 @@ CMakeFiles/opengllearning.dir/src/main.cpp.o:
 
 /usr/include/c++/14/variant:
 
-/usr/include/x86_64-linux-gnu/bits/uio_lim.h:
+/usr/include/x86_64-linux-gnu/bits/mathcalls-macros.h:
 
 /usr/include/ctype.h:
 
@@ -817,11 +912,15 @@ CMakeFiles/opengllearning.dir/src/main.cpp.o:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
 
-/usr/include/sched.h:
+/home/zgh/CPPLearning/openglLearning/third_party/glfw/include/GLFW/glfw3.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
+
+/usr/include/math.h:
 
 /usr/include/wctype.h:
 
-/usr/include/x86_64-linux-gnu/bits/errno.h:
+/usr/include/sched.h:
 
 /usr/include/x86_64-linux-gnu/asm/types.h:
 
@@ -835,11 +934,23 @@ CMakeFiles/opengllearning.dir/src/main.cpp.o:
 
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
+/usr/include/x86_64-linux-gnu/bits/fp-logb.h:
 
 /usr/include/x86_64-linux-gnu/bits/getopt_core.h:
 
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
+
+/usr/include/c++/14/bits/ranges_algobase.h:
+
+/usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
+
+/usr/include/x86_64-linux-gnu/bits/math-vector.h:
+
+/usr/include/c++/14/bits/allocated_ptr.h:
+
+/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
 
 /usr/include/c++/14/bits/streambuf.tcc:
 
@@ -877,8 +988,6 @@ third_party/glfw/src/libglfw3.a:
 
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
-/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
-
 /usr/include/x86_64-linux-gnu/c++/14/bits/cpu_defines.h:
 
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
@@ -896,37 +1005,3 @@ third_party/glfw/src/libglfw3.a:
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 
 /usr/include/x86_64-linux-gnu/bits/timex.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/14/include/stdarg.h:
-
-/usr/include/asm-generic/types.h:
-
-/usr/include/asm-generic/bitsperlong.h:
-
-/usr/include/c++/14/pstl/execution_defs.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
-
-/usr/include/c++/14/bits/ranges_algobase.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
-
-/usr/include/asm-generic/errno.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
-
-/usr/include/x86_64-linux-gnu/c++/14/bits/gthr.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/typesizes.h:
