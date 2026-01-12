@@ -1,1 +1,1 @@
-/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/opengllearning.dir/link.d CMakeFiles/opengllearning.dir/src/main.cpp.o -o opengllearning  third_party/glad/libglad.a third_party/glfw/src/libglfw3.a /usr/lib/x86_64-linux-gnu/librt.a -lm -ldl
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/opengllearning.dir/link.d CMakeFiles/opengllearning.dir/src/main.cpp.o -o opengllearning  third_party/glad/libglad.a third_party/glfw/src/libglfw3.a /usr/lib/librt.a -lm -ldl

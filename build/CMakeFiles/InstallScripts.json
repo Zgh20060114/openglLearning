@@ -1,0 +1,10 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/zgh/CPP_Projects/openglLearning/build/cmake_install.cmake",
+		"/home/zgh/CPP_Projects/openglLearning/build/third_party/glad/cmake_install.cmake",
+		"/home/zgh/CPP_Projects/openglLearning/build/third_party/glfw/cmake_install.cmake",
+		"/home/zgh/CPP_Projects/openglLearning/build/third_party/glfw/src/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
