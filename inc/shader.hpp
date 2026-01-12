@@ -26,6 +26,20 @@ public:
   Shader(const Shader &other) = delete;
   Shader &operator=(const Shader &other) = delete;
 
+  Shader(Shader &&other) {
+    shader_program = other.shader_program;
+    other.shader_program = 0;
+  }
+  Shader &operator=(Shader &&other) {
+    if (this != &other) {
+      if (shader_program != 0) {
+        glDeleteShader(shader_program);
+      }
+      shader_program = other.shader_program;
+    }
+    return *this;
+  }
+
 private:
   GLuint shader_program{};
 
