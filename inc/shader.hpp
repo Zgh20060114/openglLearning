@@ -11,16 +11,17 @@
 
 class Shader {
 public:
-  Shader(const std::filesystem::path &vertex_shader_path,
-         const std::filesystem::path &fragment_shader_path) {
+  explicit Shader(const std::filesystem::path &vertex_shader_path,
+                  const std::filesystem::path &fragment_shader_path) {
     std::string vertex_shader_source = readFile(vertex_shader_path);
     std::string fragment_shader_source = readFile(fragment_shader_path);
     compileAndLinkShader(vertex_shader_source, fragment_shader_source);
+
   }
   void use() { glUseProgram(shader_program); }
   ~Shader() {
     if (shader_program != 0) {
-      glDeleteShader(shader_program);
+      glDeleteProgram(shader_program);
     }
   }
   Shader(const Shader &other) = delete;
@@ -28,14 +29,15 @@ public:
 
   Shader(Shader &&other) {
     shader_program = other.shader_program;
-    other.shader_program = 0;
+    other.shader_program = 0; // 保证id不能重复
   }
   Shader &operator=(Shader &&other) {
     if (this != &other) {
       if (shader_program != 0) {
-        glDeleteShader(shader_program);
+        glDeleteProgram(shader_program);
       }
       shader_program = other.shader_program;
+      other.shader_program = 0;
     }
     return *this;
   }

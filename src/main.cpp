@@ -2,34 +2,34 @@
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
 // clang-format on
+#include "shader.hpp"
 #include <array>
 #include <cmath>
 #include <iostream>
 #include <memory>
 #include <string>
-#include <vector>
 
-const std::string vertex_shader_source = R"(
-#version 330 core
-    layout(location = 0) in vec3 inPos;
-    layout(location = 1) in vec3 inColor;
-    out vec4 out_color;
-void main() { gl_Position = vec4(inPos.x, inPos.y, inPos.z, 1.0f);
-  out_color = vec4(inColor,1.0f);
-  }
-)";
-
-const std::string fragment_shader_source = R"(
-  #version 330 core
-  out vec4 out_pixel_color;
-  in vec4 out_color;
-  void main(){
-  out_pixel_color = out_color;
-  }
-)";
+// const std::string vertex_shader_source = R"(
+// #version 330 core
+//     layout(location = 0) in vec3 inPos;
+//     layout(location = 1) in vec3 inColor;
+//     out vec4 out_color;
+// void main() { gl_Position = vec4(inPos.x, inPos.y, inPos.z, 1.0f);
+//   out_color = vec4(inColor,1.0f);
+//   }
+// )";
+//
+// const std::string fragment_shader_source = R"(
+//   #version 330 core
+//   out vec4 out_pixel_color;
+//   in vec4 out_color;
+//   void main(){
+//   out_pixel_color = out_color;
+//   }
+// )";
 
 void framebufferResizeCallback(GLFWwindow *window, int width, int height) {
-  glViewport(0, 0, width, height);
+  glViewport(0, 0, width, height); // 左下
 }
 
 void processKeyPress(GLFWwindow *window) {
@@ -94,31 +94,36 @@ int main(int argc, char **argv) {
 
   glBindBuffer(GL_ARRAY_BUFFER, 0);
   glBindVertexArray(0);
+  {
+    Shader shader("../shader/vertex_shader_source.vert",
+                  "../shader/fragment_shader_source.frag");
+    shader.use();
 
-  while (!glfwWindowShouldClose(window)) {
-    processKeyPress(window);
-    glClearColor(0.8f, 0.3f, 0.4f, 0.5f);
-    glClear(GL_COLOR_BUFFER_BIT);
+    while (!glfwWindowShouldClose(window)) {
+      processKeyPress(window);
+      glClearColor(0.8f, 0.3f, 0.4f, 0.5f);
+      glClear(GL_COLOR_BUFFER_BIT);
 
-    // auto time = glfwGetTime();
-    // auto green_value = std::sin(time) / 2.0f + 0.5f;
-    // auto u_loc = glGetUniformLocation(shader_program, "out_uniform_color");
-    // glUniform4f(u_loc, 0.0f, green_value, 0.0f, 1.0f);
+      // auto time = glfwGetTime();
+      // auto green_value = std::sin(time) / 2.0f + 0.5f;
+      // auto u_loc = glGetUniformLocation(shader_program, "out_uniform_color");
+      // glUniform4f(u_loc, 0.0f, green_value, 0.0f, 1.0f);
 
-    // glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-    glBindVertexArray(vao);
-    // glDrawArrays(GL_TRIANGLES, 0, 3);
-    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, static_cast<void *>(0));
-    // glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-    glBindVertexArray(0);
-    glfwSwapBuffers(window);
-    glfwPollEvents();
+      // glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+      glBindVertexArray(vao);
+      // glDrawArrays(GL_TRIANGLES, 0, 3);
+      glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, static_cast<void *>(0));
+      // glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+      glBindVertexArray(0);
+      glfwSwapBuffers(window);
+
+      glfwPollEvents();
+    }
+    glDeleteVertexArrays(1, &vao);
+    glDeleteBuffers(1, &vbo);
+    glDeleteBuffers(1, &ebo);
   }
-  glDeleteBuffers(1, &vao);
-  glDeleteBuffers(1, &vbo);
-  glDeleteBuffers(1, &ebo);
-  glDeleteProgram(shader_program);
-  glfwTerminate();
+  glfwTerminate(); // shader出作用域在glfwTerminate之前，所以在退出之前可以正常析构，否则内存泄漏
 
   return 0;
 }
