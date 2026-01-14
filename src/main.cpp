@@ -8,6 +8,8 @@
 #include <iostream>
 #include <memory>
 #include <string>
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
 
 // const std::string vertex_shader_source = R"(
 // #version 330 core
@@ -94,6 +96,24 @@ int main(int argc, char **argv) {
 
   glBindBuffer(GL_ARRAY_BUFFER, 0);
   glBindVertexArray(0);
+
+  int width{}, height{}, color_channel{};
+  auto data = stbi_load("grass.png", &width, &height, &color_channel, 0);
+  if (data) {
+    throw std::runtime_error("stb failed to load png!");
+  }
+  GLuint tex{};
+  glGenTextures(1, &tex);
+  glBindTexture(GL_TEXTURE_2D, tex);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+  glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB,
+               GL_UNSIGNED_BYTE, data);
+  glGenerateMipmap(GL_TEXTURE_2D);
+  stbi_image_free(data);
+
   {
     Shader shader("../shader/vertex_shader_source.vert",
                   "../shader/fragment_shader_source.frag");

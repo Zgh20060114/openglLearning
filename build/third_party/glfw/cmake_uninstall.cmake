@@ -1,9 +1,9 @@
 
-if (NOT EXISTS "/home/zgh/CPP_Projects/openglLearning/build/third_party/glfw/install_manifest.txt")
-    message(FATAL_ERROR "Cannot find install manifest: \"/home/zgh/CPP_Projects/openglLearning/build/third_party/glfw/install_manifest.txt\"")
+if (NOT EXISTS "/home/zgh/CPPLearning/openglLearning/build/third_party/glfw/install_manifest.txt")
+    message(FATAL_ERROR "Cannot find install manifest: \"/home/zgh/CPPLearning/openglLearning/build/third_party/glfw/install_manifest.txt\"")
 endif()
 
-file(READ "/home/zgh/CPP_Projects/openglLearning/build/third_party/glfw/install_manifest.txt" files)
+file(READ "/home/zgh/CPPLearning/openglLearning/build/third_party/glfw/install_manifest.txt" files)
 string(REGEX REPLACE "\n" ";" files "${files}")
 
 foreach (file ${files})

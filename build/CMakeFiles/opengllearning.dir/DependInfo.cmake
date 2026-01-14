@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/zgh/CPP_Projects/openglLearning/src/main.cpp" "CMakeFiles/opengllearning.dir/src/main.cpp.o" "gcc" "CMakeFiles/opengllearning.dir/src/main.cpp.o.d"
+  "/home/zgh/CPPLearning/openglLearning/src/main.cpp" "CMakeFiles/opengllearning.dir/src/main.cpp.o" "gcc" "CMakeFiles/opengllearning.dir/src/main.cpp.o.d"
   "" "opengllearning" "gcc" "CMakeFiles/opengllearning.dir/link.d"
   )
 
