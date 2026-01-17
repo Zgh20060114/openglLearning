@@ -16,7 +16,6 @@ public:
     std::string vertex_shader_source = readFile(vertex_shader_path);
     std::string fragment_shader_source = readFile(fragment_shader_path);
     compileAndLinkShader(vertex_shader_source, fragment_shader_source);
-
   }
   void use() { glUseProgram(shader_program); }
   ~Shader() {
@@ -40,6 +39,11 @@ public:
       other.shader_program = 0;
     }
     return *this;
+  }
+
+  void setInt(std::string uniform_name, int num) {
+    glUniform1i(glGetUniformLocation(shader_program, uniform_name.c_str()),
+                num);
   }
 
 private:

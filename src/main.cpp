@@ -3,13 +3,12 @@
 #include "GLFW/glfw3.h"
 // clang-format on
 #include "shader.hpp"
+#include "texture.hpp"
 #include <array>
 #include <cmath>
 #include <iostream>
 #include <memory>
 #include <string>
-#define STB_IMAGE_IMPLEMENTATION
-#include "stb_image.h"
 
 // const std::string vertex_shader_source = R"(
 // #version 330 core
@@ -65,12 +64,12 @@ int main(int argc, char **argv) {
   glBindVertexArray(vao);
 
   // clang-format off
-  std::array<float, 24> triangle_vtx{
-    -0.5f, 0.5f, 0.0f, 1.0f,0.0f,0.0f,
-    -0.5f, -0.5f,0.0f,0.0f,1.0f,0.0f,
-    0.5f, -0.5f, 0.0f, 0.0f,0.0f,1.0f,
-    0.5f,0.5f,  0.0f,1.0f,1.0f,1.0f,
-  }; // 左上,左下, 右下,右上(带颜色)
+  std::array<float, 32> triangle_vtx{
+    -0.5f, 0.5f, 0.0f, 1.0f,0.0f,0.0f, 0.0f,1.0f,
+    -0.5f, -0.5f,0.0f,0.0f,1.0f,0.0f, 0.0f,0.0f,
+    0.5f, -0.5f, 0.0f, 0.0f,0.0f,1.0f, 1.0f,0.0f,
+    0.5f,0.5f,  0.0f,1.0f,1.0f,1.0f,1.0f,1.0f
+  }; // 左上,左下, 右下,右上(带颜色,纹理坐标)
   // clang-format on
 
   GLuint vbo{};          // vbo其实是个id
@@ -79,13 +78,17 @@ int main(int argc, char **argv) {
   glBufferData(GL_ARRAY_BUFFER, sizeof(triangle_vtx), triangle_vtx.data(),
                GL_STATIC_DRAW); // 数据首地址 // 将数据放入vbo中
 
-  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat),
+  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat),
                         static_cast<void *>(0));
   glEnableVertexAttribArray(0);
 
-  glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat),
+  glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat),
                         reinterpret_cast<void *>(3 * sizeof(GLfloat)));
   glEnableVertexAttribArray(1);
+
+  glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat),
+                        reinterpret_cast<void *>(6 * sizeof(GLfloat)));
+  glEnableVertexAttribArray(2);
 
   std::array<int, 6> index{0, 1, 2, 0, 2, 3};
   GLuint ebo{};
@@ -97,27 +100,16 @@ int main(int argc, char **argv) {
   glBindBuffer(GL_ARRAY_BUFFER, 0);
   glBindVertexArray(0);
 
-  int width{}, height{}, color_channel{};
-  auto data = stbi_load("grass.png", &width, &height, &color_channel, 0);
-  if (data) {
-    throw std::runtime_error("stb failed to load png!");
-  }
-  GLuint tex{};
-  glGenTextures(1, &tex);
-  glBindTexture(GL_TEXTURE_2D, tex);
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-  glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB,
-               GL_UNSIGNED_BYTE, data);
-  glGenerateMipmap(GL_TEXTURE_2D);
-  stbi_image_free(data);
-
   {
     Shader shader("../shader/vertex_shader_source.vert",
                   "../shader/fragment_shader_source.frag");
     shader.use();
+    Texture tex1("../texture/awesomeface.png");
+    tex1.bind(GL_TEXTURE0);
+    Texture tex2("../texture/azalea_top.png");
+    tex1.bind(GL_TEXTURE1);
+    shader.setInt("out_tex1", 0);
+    shader.setInt("out_tex2", 1);
 
     while (!glfwWindowShouldClose(window)) {
       processKeyPress(window);
